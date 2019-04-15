@@ -3,9 +3,19 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class Circle extends React.Component {
 	render() {
+		const { style, color} = this.props;
+
+		let bgColor = '#7B8437';
+		let textColor = '#fff';
+
+		if (color === 'white') {
+			bgColor = '#fff';
+			textColor = '#7B8437';
+		}
+
 		return (
-			<View style={styles.memoAddButton}>
-              <Text style={styles.memoAddButtonTitle}>
+			<View style={[styles.memoAddButton, style,{backgroundColor: bgColor} ]}>
+              <Text style={[styles.memoAddButtonTitle,{color: textColor}]}>
               {this.props.children}
               </Text>
           </View>
