@@ -10,7 +10,7 @@ class MemoListScreen extends React.Component {
 			<View style={styles.container}>
           		<MemoList />
           		<Circle>
-          		{'\uf067'}
+          		{'\uf067'
           		</Circle>
 			</View>
 		);

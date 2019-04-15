@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Font } from 'expo';
+import { createIconSet } from '@expo/vector-icons';
 import FontAwesome from '../../assets/fa-solid-900.ttf';
+
 
 class Circle extends React.Component {
 
