@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Appbar from './src/compornents/Appbar';
-import MemoEditScreen from './src/screens/MemoEditScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
           <Appbar />
-          <MemoEditScreen />
+          <SignUpScreen />
       </View>
     );
   }
