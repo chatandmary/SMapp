@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import { Font } from 'expo';
 import { createIconSet } from '@expo/vector-icons';
 import FontAwesome from '../../assets/fa-solid-900.ttf';
@@ -20,7 +20,7 @@ class Circle extends React.Component {
   }
 
   render() {
-		const { style, color} = this.props;
+		const { style, color, onPress} = this.props;
 
 		let bgColor = '#7B8437';
 		let textColor = '#fff';
@@ -31,7 +31,8 @@ class Circle extends React.Component {
 		}
 
 		return (
-			<View style={[styles.memoAddButton, style,{backgroundColor: bgColor} ]}>
+      <TouchableHighlight style={[styles.contianer, style]} onPress={onPress} underlayColor="transparent">
+			<View style={[styles.memoAddButton,{backgroundColor: bgColor} ]}>
               {
                 this.state.fontLoaded ? (
                   <Text style={[styles.memoAddButtonTitle,{color: textColor}]}>
@@ -40,15 +41,20 @@ class Circle extends React.Component {
               ) : null
               }
           </View>
+          </TouchableHighlight>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-	memoAddButton: {
+  contianer: {
     position: 'absolute',
     bottom: 30,
     right: 30,
+    width:60,
+    height:60,
+  },
+	memoAddButton: {
     width:60,
     height:60,
     backgroundColor:'#7B8437',

@@ -1,16 +1,18 @@
 import React from 'react';
-import { StyleSheet, View, TextInput, TouchableHighlight,Text } from 'react-native';
+import { StyleSheet, View, TextInput, TouchableHighlight,Text,ImageBackground } from 'react-native';
 
 class SignUpScreen extends React.Component {
 	render() {
 		return (
 			<View style={styles.container}>
+			
 			<Text style={styles.title}>メンバー登録</Text>
 			<TextInput style={styles.input} value="Email Address" />
 			<TextInput style={styles.input} value="Passward" />
 			<TouchableHighlight style={styles.button} title="送信" onPress={() => {}}　underlayColor="#7B8447">
 				<Text style={styles.buttonTitle}>送信する</Text>
 			</TouchableHighlight> 
+			
 			</View>
 		);
 	}
