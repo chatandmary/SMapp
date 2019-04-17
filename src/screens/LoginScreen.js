@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TextInput, TouchableHighlight,Text } from 'react-native';
-
+import firebase from 'firebase';
 
 class LoginScreen extends React.Component {
 
@@ -9,10 +9,15 @@ class LoginScreen extends React.Component {
 		password:'',
 	}
 
+	// Login処理
 	handleSubmit() {
-		
-		// Login処理
-
+		firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+		.then((user) => {
+			this.props.navigation.navigate('Home');
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 	}
 
 	render() {
